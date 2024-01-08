@@ -1,4 +1,4 @@
-# README for FastAPI Text Processing Application
+# Text Content Reader API
 
 ## Description
 
@@ -53,7 +53,7 @@ Before you begin, ensure that you have Docker and GIT installed on your computer
    ```bash
    docker run -d -p 8000:8000 --name txt-reader-container txt-reader-app
    ```
-   This command runs the container in detached mode, maps port 8000 of the container to port 8000 of the host, and names the container txt-reader-container.
+   This command starts the container in detached mode, maps port 8000 of the container to port 8000 of the host, and names the container txt-reader-container, for ease of use in the future.
    
    Please note, after this point, you can stop and start the container using the following commands, which are more straightforward:
 
