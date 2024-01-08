@@ -81,7 +81,7 @@ Before you begin, ensure that you have Docker and GIT installed on your computer
    ```
    - Open the `sample.txt` file add any text you want. Alternatively, you can open the Python client file and change the `file_path` variable to the path to your desired .txt file. Then, run the client file using the following command:
    ```bash
-   python3 client.py
+   python3 python_client.py
    ```
-   - This should display the JSON data regarding the word statistics of the `.txt` file in the terminal.
+   - This should display the JSON data regarding the word statistics of your desired `.txt` file in the terminal.
    - Alternatively, use an API request service such as Insomnia or Postman.
