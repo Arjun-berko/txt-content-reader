@@ -7,13 +7,6 @@ import re
 
 app = FastAPI()
 
-class TextModel(BaseModel):
-    """
-    This class is the data model for text input.
-    It includes a single field 'text' which is a string.
-    """
-    text: str
-
 def process_text(content: bytes) -> dict:
     """
     Process the text from the files to calculate various statistics.
@@ -32,7 +25,7 @@ def process_text(content: bytes) -> dict:
     # Regex pattern to match different elements in the text
     words = re.findall(
         r'''
-        [\w\-\'.]+\@[\w\-\']+\.[\w\-\']+|  # Email addresses with dot in the username
+        [\w\-\'.]+\@[\w\-\']+\.[\w\-\']+| # Email addresses with dot in the username
         \b\d{1,2}/\d{1,2}/\d{2,4}\b|      # Dates in dd/mm/yyyy format
         \b\d{1,2}-\d{1,2}-\d{2,4}\b|      # Dates in dd-mm-yyyy format
         \bhttps?:\/\/[\w\-\'.\/]+|        # URLs including http, https, periods, and slashes
@@ -120,4 +113,5 @@ async def count_words_in_file(file: UploadFile = File(...)) -> JSONResponse:
             status_code=500,
             content={"message": f"An internal error occurred: {str(e)}"}
         )
+
 
